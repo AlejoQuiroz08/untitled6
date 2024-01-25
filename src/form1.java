@@ -21,26 +21,23 @@ public class form1 {
             usuario = textField1.getText();
             contra = String.valueOf(passwordField1.getPassword());
                 try {
-                    Connection connection = Main.conexionDB();
-                    Statement statement;
-                    statement = connection.createStatement();
-                    java.sql.ResultSet resultSet;
-                    resultSet = statement.executeQuery("select * from calificaciones");
-                    String nombre;
-                    String cedula;
-                    while (resultSet.next()) {
-                        nombre = resultSet.getString("nombre");
-                        cedula = String.valueOf(resultSet.getInt("cedula"));
-                        if (cedula.equals(contra)&&nombre.equals(usuario)) {
-                            Main.frame1.dispose();
-                            JFrame frame2 = new JFrame("Bienvenido");
-                            frame2.setContentPane(new form2().hola);
-                            frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            frame2.setSize(400, 400);
-                            frame2.setVisible(true);
-                        }else{
-                            validacion.setText("Ingrese credenciales correctas");
-                        }
+
+                    if (usuario.equals("admin")&&contra.equals("123")) {
+                        Main.frame1.dispose();
+
+//                        JFrame frame2 = new JFrame("Bienvenido");
+//                        frame2.setContentPane(new form2().hola);
+//                        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//                        frame2.setSize(400, 400);
+//                        frame2.setVisible(true);
+
+                        Formulario formulario1=new Formulario();
+                        formulario1.setBounds(10,20,300,200);
+                        formulario1.setVisible(true);
+                        formulario1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+                    }else {
+                        validacion.setText("Ingrese credenciales correctas");
                     }
 
                 }catch (Exception ex) {
