@@ -32,7 +32,7 @@ public class form1 {
 //                        frame2.setVisible(true);
 
                         Formulario formulario1=new Formulario();
-                        formulario1.setBounds(10,20,300,200);
+                        formulario1.setBounds(10,20,400,400);
                         formulario1.setVisible(true);
                         formulario1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
