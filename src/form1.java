@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -11,6 +12,10 @@ public class form1 {
     private JPasswordField passwordField1;
     public JPanel login;
     private JLabel validacion;
+    private JToggleButton cambiar_de_modo;
+    private JLabel titulo_login;
+    private JLabel texto_usuario;
+    private JLabel texto_password;
 
 
     public form1() {
@@ -45,6 +50,26 @@ public class form1 {
                 }
 
 
+            }
+        });
+        ;
+        cambiar_de_modo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(cambiar_de_modo.isSelected()){
+                    login.setBackground(Color.BLACK);
+                    titulo_login.setForeground(Color.WHITE);
+                    texto_usuario.setForeground(Color.WHITE);
+                    texto_password.setForeground(Color.WHITE);
+                    cambiar_de_modo.setText("OFF");
+                }
+                else{
+                    login.setBackground(Color.WHITE);
+                    titulo_login.setForeground(Color.BLACK);
+                    texto_usuario.setForeground(Color.BLACK);
+                    texto_password.setForeground(Color.BLACK);
+                    cambiar_de_modo.setText("ON");
+                }
             }
         });
     }
