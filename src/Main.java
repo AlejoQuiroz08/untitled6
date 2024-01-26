@@ -8,7 +8,7 @@ import javax.swing.*;
         public static void main(String[] args) {
             frame1.setContentPane(new form1().login);
             frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame1.setSize(400, 400);
+            frame1.setSize(600, 600);
             frame1.setVisible(true);
 
 

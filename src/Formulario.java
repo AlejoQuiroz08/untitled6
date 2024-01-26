@@ -32,7 +32,7 @@ public class Formulario extends JFrame implements ActionListener {
         menu1.add(mi3);
 
         toggleButton = new JToggleButton("Modo Oscuro");
-        toggleButton.setBounds(10, 10, 100, 100);
+        toggleButton.setBounds(220, 10, 150, 50);
         toggleButton.addActionListener(this);
         add(toggleButton);
     }
@@ -60,7 +60,7 @@ public class Formulario extends JFrame implements ActionListener {
         tabla.addColumn("Edad");
         jTable = new JTable(tabla);
         JScrollPane jScrollPane = new JScrollPane(jTable);
-        jScrollPane.setBounds(10, 50, 200, 150);
+        jScrollPane.setBounds(10, 50, 200, 100);
         add(jScrollPane);
         tabla.addRow(new Object[]{"", ""});
         tabla.addRow(new Object[]{"", ""});
