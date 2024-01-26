@@ -2,9 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.Statement;
-import java.util.Objects;
+
 
 public class form1 {
     private JButton ingresarButton;
@@ -30,12 +28,6 @@ public class form1 {
                     if (usuario.equals("admin")&&contra.equals("123")) {
                         Main.frame1.dispose();
 
-//                        JFrame frame2 = new JFrame("Bienvenido");
-//                        frame2.setContentPane(new form2().hola);
-//                        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//                        frame2.setSize(400, 400);
-//                        frame2.setVisible(true);
-
                         Formulario formulario1=new Formulario();
                         formulario1.setBounds(10,20,400,400);
                         formulario1.setVisible(true);
@@ -57,7 +49,7 @@ public class form1 {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(cambiar_de_modo.isSelected()){
-                    login.setBackground(Color.BLACK);
+                    login.setBackground(Color.DARK_GRAY);
                     titulo_login.setForeground(Color.WHITE);
                     texto_usuario.setForeground(Color.WHITE);
                     texto_password.setForeground(Color.WHITE);
@@ -65,9 +57,9 @@ public class form1 {
                 }
                 else{
                     login.setBackground(Color.WHITE);
-                    titulo_login.setForeground(Color.BLACK);
-                    texto_usuario.setForeground(Color.BLACK);
-                    texto_password.setForeground(Color.BLACK);
+                    titulo_login.setForeground(Color.DARK_GRAY);
+                    texto_usuario.setForeground(Color.DARK_GRAY);
+                    texto_password.setForeground(Color.DARK_GRAY);
                     cambiar_de_modo.setText("ON");
                 }
             }
