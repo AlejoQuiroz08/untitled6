@@ -14,18 +14,21 @@ public class form1 {
     private JLabel titulo_login;
     private JLabel texto_usuario;
     private JLabel texto_password;
+    private JFormattedTextField formattedTextField1;
+    private JCheckBox mostrar_password;
+    private JLabel contra;
 
 
     public form1() {
         ingresarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            String contra, usuario;
+            String contra1, usuario;
             usuario = textField1.getText();
-            contra = String.valueOf(passwordField1.getPassword());
+            contra1 = String.valueOf(passwordField1.getPassword());
                 try {
 
-                    if (usuario.equals("admin")&&contra.equals("123")) {
+                    if (usuario.equals("admin")&&contra1.equals("123")) {
                         Main.frame1.dispose();
 
                         Formulario formulario1=new Formulario();
@@ -34,7 +37,9 @@ public class form1 {
                         formulario1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
                     }else {
-                        validacion.setText("Ingrese credenciales correctas");
+                        //JOptionPane.showMessageDialog(this,"Ingrese credenciales correctas");
+                       // validacion.setText("Ingrese credenciales correctas");
+                        JOptionPane.showMessageDialog(null,"Ingrese credenciales correctas");
                     }
 
                 }catch (Exception ex) {
@@ -61,6 +66,15 @@ public class form1 {
                     texto_usuario.setForeground(Color.DARK_GRAY);
                     texto_password.setForeground(Color.DARK_GRAY);
                     cambiar_de_modo.setText("ON");
+                }
+            }
+        });
+        mostrar_password.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (mostrar_password.isSelected()){
+                    contra.setText(String.valueOf(passwordField1.getPassword()));
                 }
             }
         });
